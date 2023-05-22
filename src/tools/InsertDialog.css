@@ -1,0 +1,39 @@
+.dialog {
+
+    width: 330px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 20px 1px #b2b2b2;
+    background-color: #ffffff;
+}
+
+.insert-dialog {
+    top: 59px;
+    left: 194px;
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.one , .two , .three , .four , .five , .six , .seven , .eight , .nine{
+    margin-bottom: 23px;
+}
+
+.flex p {
+    color: #383838;
+    font-size: 17px;
+    margin-left: 13px;
+}
+
+.six {
+    margin-bottom: 16px;
+}
+
+.headers {
+    padding-top: 16px;
+    border-top: 1px solid #e1e0e0;
+}

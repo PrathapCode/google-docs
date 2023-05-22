@@ -1,0 +1,490 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F3F3F3;
+}
+
+/*/// Text Editor ///*/
+
+.container {
+    width: 90%;
+}
+
+.container .ql-editor {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 1in;
+    margin: 1rem;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.9);
+    background-color: #fff;
+}
+
+.container .ql-container.ql-snow {
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.container .ql-toolbar.ql-snow {
+    top: 8.02vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0rem 1rem 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    z-index: 1;
+    background-color: rgb(232, 236, 251);
+    border: none;
+    border-radius: 50px;
+}
+
+.container .ql-toolbar.ql-snow .pen {
+    margin-left: 14vw;
+}
+
+.container .ql-toolbar.ql-snow .editing {
+    margin-left: 13vw;
+}
+.container .ql-toolbar.ql-snow .drop-down {
+    margin-left: 14vw;
+}
+
+.container .ql-toolbar.ql-snow .up-arrow {
+    margin-left: 14vw;
+    padding-left: 10px;
+    border-left: 1px solid #b9b9b9;
+}
+
+.container .ql-formats .ql-undo :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-redo :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-print :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-spellcheck :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-paint :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-size.ql-picker :hover {
+    /* padding: 1px; */
+    cursor: pointer;
+    background-color: #E8E8E8;
+}
+
+.container .ql-formats .ql-font.ql-picker :hover {
+    /* padding: 1px; */
+    cursor: pointer;
+    background-color: #E8E8E8;
+}
+
+.container .ql-formats .ql-bold :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-italic :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-underline :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-color.ql-color-picker :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-background :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-link :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-image :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-align :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-list :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-indent :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-code-block :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-clean :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-editing :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.container .ql-formats .ql-pen-editing :hover {
+    padding: 1px;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+
+/* Print the Page in Correct Printout Format  */
+
+@page {
+    margin: 11in;
+}
+
+@media print {
+    body {
+        background: none;
+    }
+
+    .container .ql-editor {
+        width: 6.5in;
+        height: 9in;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        align-self: flex-start;
+    }
+
+    .container .ql-toolbar.ql-snow {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+/*/// Tool Bar ///*/
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 0.3rem 1rem;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.docs-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.docs-logo:hover {
+    cursor: pointer;
+}
+
+.toolbar-left-top-bottom {
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
+.toolbar-left-top {
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+
+.toolbar-left-top .document-name-input {
+    display: inline-block;
+    width: 11rem;
+    padding: 0.5px 6px 0.5px 8px;
+    font-size: 19px;
+    color: #535353;
+    border: none;
+    margin-left: 4.5px;
+    margin-right: 8.5px;
+    border-radius: 6px;
+    background-color: #F3F3F3;
+
+}
+
+
+
+.toolbar-left-top .star {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.toolbar-left-top .folder-move {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.toolbar-left-top .document-done {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+.toolbar-left-top .star:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: -2.9px 12px 0px -3.5px;
+    padding: 2.9px 3.5px 0px 3.5px;
+    background-color: rgba(192, 192, 192, 0.304);
+}
+.toolbar-left-top .folder-move:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: -2.9px 12px 0px -3.5px;
+    padding: 2.9px 3.5px 0px 3.5px;
+    background-color: rgba(171, 171, 171, 0.304);
+}
+.toolbar-left-top .document-done:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: -2.9px 12px 0px -3.5px;
+    padding: 2.9px 3.5px 0px 3.5px;
+    background-color: rgba(192, 192, 192, 0.304);
+}
+
+.toolbar-left-top .document-name-input:hover {
+    margin-bottom: -1px;
+    border: 1px solid #000;
+}
+
+
+.toolbar-left-bottom {
+    display: flex;
+    margin-left: 4px;
+}
+
+.toolbar-left-bottom .menu-bar{
+    /* margin-right: 17px; */
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.file:hover , .edit:hover , .view:hover , .insert:hover , .format:hover , .tools:hover , .extensions:hover , .help:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+
+/*/// TOOLBAR RIGHT ///*/
+
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    margin-left: 27px;
+    display: inline-block;
+}
+
+.share-div {
+    display: flex;
+    align-items: center;
+    margin-left: 27px;
+    padding: 9px 20px;
+    border-radius: 50px;
+    background-color: #afe5fd;
+}
+
+.share-div .lock {
+    margin-right: 5px;
+}
+
+.share-div p {
+    font-size: 15px;
+    font-weight: 500;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.join-call {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 27px;
+    display: inline-block;
+}
+
+.comment {
+    margin-top: 5px;
+    margin-left: 27px;
+    display: inline-block;
+}
+
+.time {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.time:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 1.2px -4.9px 0px -4.9px;
+    padding: 4.2px 4.9px 0px 4.9px;
+    background-color: rgba(192, 192, 192, 0.304);
+}
+
+.comment:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: -2.2px -7.9px -1px 18.9px;
+    padding: 7.2px 7.9px 1px 7.9px;
+    background-color: rgba(192, 192, 192, 0.304);
+}
+
+.join-call:hover {
+    border-radius: 50px;
+    cursor: pointer;
+    margin: -1.2px -7.9px 0px 10.8px;
+    padding: 8.2px 7.9px 2px 15.9px;
+    background-color: rgba(192, 192, 192, 0.304);
+
+}
+
+.share-div:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px #bcbcbc;
+}
+
+.profile:hover {
+    cursor: pointer;
+    margin: -4px -4px 0 22px;
+    padding: 4px 4px 0 4.85px;
+    border-radius: 100%;
+    background-color: rgba(176, 176, 176, 0.304);
+} 
+
+
+
+
+/* ///SHARING DIALOG BOX SHOW ///// */
+
+/* .body-show {
+
+    /* position: absolute; */
+ *
+
+ .body-show {
+    position: relative;
+    
+ }
+
+ .blur {
+    width: 105.7vw;
+    height: 100vh;
+    left: -1429px;
+    top: -31px;
+    position: absolute;
+    background-color: rgba(3, 3, 3, 0.544);
+    opacity: 0.4;
+ }
+
+.show {
+    z-index: 999;
+    background-color: #fff;
+    position: fixed;
+    left: 525px;
+    top: 260px;
+    width: 400px;
+    height: 250px;  
+    padding: 30px;
+    border-radius: 10px;  
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: 27px;
+    font-weight: 100;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header img {
+    margin-left: 20px;
+}
+
+.share div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
